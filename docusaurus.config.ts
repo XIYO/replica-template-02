@@ -92,19 +92,19 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'IT 트렌드',
+          title: '개요',
           items: [
-            { label: 'AI 혁명', to: '/docs/trends/ai-revolution' },
-            { label: '클라우드 네이티브', to: '/docs/trends/cloud-native' },
-            { label: '로우코드/노코드', to: '/docs/trends/low-code' },
+            { label: '소개', to: '/docs/overview/introduction' },
+            { label: '시장 영향', to: '/docs/overview/market-impact' },
+            { label: '타겟 고객', to: '/docs/overview/target-audience' },
           ],
         },
         {
-          title: '개발 이야기',
+          title: '주요 기능',
           items: [
-            { label: '모던 프론트엔드', to: '/docs/development/modern-frontend' },
-            { label: '백엔드 트렌드', to: '/docs/development/backend-trends' },
-            { label: 'DevOps 문화', to: '/docs/development/devops-culture' },
+            { label: '하드웨어 사양', to: '/docs/features/hardware-specs' },
+            { label: '소프트웨어 및 게임', to: '/docs/features/software-and-games' },
+            { label: '사용자 경험', to: '/docs/features/user-experience' },
           ],
         },
         {
