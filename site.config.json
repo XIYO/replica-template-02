@@ -1,8 +1,8 @@
 {
   "subdomain": "replica-template-02",
-  "title": "요즘 IT 이야기",
-  "description": "빠르게 변화하는 IT 세계의 최신 트렌드와 개발 이야기",
-  "accentColor": "#3b82f6",
+  "title": "닌텐도 스위치 2",
+  "description": "차세대 휴대용 게임의 혁신",
+  "accentColor": "#e60012",
   "locale": "ko",
   "githubRepo": "XIYO/replica-template-02"
 }
