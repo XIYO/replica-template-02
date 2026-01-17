@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'AI 혁명',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        생성형 AI가 바꾸는 개발 환경과 새로운 가능성을 탐구합니다.
+        GitHub Copilot, Cursor 등 AI 코딩 어시스턴트의 시대입니다.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: '클라우드 네이티브',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        컨테이너와 쿠버네티스로 구축하는 현대적 인프라.
+        확장성, 유연성, 복원력을 핵심 가치로 합니다.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: '모던 개발',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        프론트엔드, 백엔드, DevOps의 최신 트렌드를 다룹니다.
+        React, Vue, Go, Rust 등 현대적인 기술 스택을 소개합니다.
       </>
     ),
   },
