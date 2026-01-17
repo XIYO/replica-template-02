@@ -1,41 +1,114 @@
-# Website
+# Replica Template (Docusaurus)
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Cloudflare Workers에 자동 배포되는 Docusaurus 문서 사이트 템플릿.
 
-## Installation
+## 빠른 시작 (CLI)
 
-```bash
-yarn
-```
-
-## Local Development
+### 1. 템플릿에서 새 레포 생성
 
 ```bash
-yarn start
+# Public
+gh repo create {owner}/{repo-name} --template xiyo/replica-template-02 --public
+
+# Private
+gh repo create {owner}/{repo-name} --template xiyo/replica-template-02 --private
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
+### 2. Secrets 설정
 
 ```bash
-yarn build
+REPO="{owner}/{repo-name}"
+
+gh secret set CLOUDFLARE_API_KEY --repo "$REPO" --body "{your-api-key}"
+gh secret set CLOUDFLARE_EMAIL --repo "$REPO" --body "{your-email}"
+gh secret set CLOUDFLARE_ACCOUNT_ID --repo "$REPO" --body "{your-account-id}"
+gh secret set CLOUDFLARE_ZONE_ID --repo "$REPO" --body "{your-zone-id}"
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
+### 3. Variables 설정
 
 ```bash
-USE_SSH=true yarn deploy
+gh variable set SITE_SUBDOMAIN --repo "$REPO" --body "{your-subdomain}"
 ```
 
-Not using SSH:
+### 4. 배포 실행
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+gh workflow run deploy.yml --repo "$REPO" --ref main
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+### 5. 결과 확인
+
+```bash
+gh run list --repo "$REPO" --limit 1
+```
+
+배포 완료 후 `https://{your-subdomain}.xiyo.dev` 접속
+
+## 배포 설정 (웹 UI)
+
+GitHub Repository Settings에서 수동으로 설정할 수도 있습니다.
+
+### Variables
+
+`Settings > Secrets and variables > Actions > Variables`
+
+| Name | 설명 | 예시 |
+|------|------|------|
+| `SITE_SUBDOMAIN` | 사이트 서브도메인 | `my-docs` |
+
+### Secrets
+
+`Settings > Secrets and variables > Actions > Secrets`
+
+| Name | 설명 |
+|------|------|
+| `CLOUDFLARE_API_KEY` | Cloudflare Global API Key |
+| `CLOUDFLARE_EMAIL` | Cloudflare 계정 이메일 |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare Account ID |
+| `CLOUDFLARE_ZONE_ID` | 도메인 Zone ID |
+
+### 배포 실행
+
+- `main` 브랜치에 푸시하면 자동 배포
+- 또는 `Actions > Deploy to Cloudflare Workers > Run workflow` 수동 실행
+
+### 설정 누락 시
+
+필수 값이 누락되면 빌드가 실패하며, 어떤 값이 누락되었는지 에러 메시지로 표시됩니다.
+
+## 로컬 개발
+
+```bash
+bun install
+bun start      # http://localhost:3000
+```
+
+## 프로젝트 구조
+
+```text
+.
+├── docs/               # 문서 파일 (.md, .mdx)
+├── blog/               # 블로그 포스트
+├── src/
+│   ├── components/     # React 컴포넌트
+│   ├── css/            # 커스텀 스타일
+│   └── pages/          # 커스텀 페이지
+├── static/             # 정적 파일 (이미지, 파비콘 등)
+├── docusaurus.config.ts # Docusaurus 설정
+├── site.config.json    # 사이트 설정
+└── wrangler.toml       # Cloudflare Workers 설정
+```
+
+## 명령어
+
+| 명령어 | 설명 |
+|--------|------|
+| `bun start` | 개발 서버 실행 |
+| `bun run build` | 프로덕션 빌드 |
+| `bun run serve` | 빌드 미리보기 |
+
+## 참고
+
+- [Docusaurus Docs](https://docusaurus.io/docs)
+- [Cloudflare Workers Docs](https://developers.cloudflare.com/workers/)
