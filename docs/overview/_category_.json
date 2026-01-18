@@ -1,8 +1,4 @@
 {
   "label": "개요",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "닌텐도 스위치 2 소개, 시장 영향, 타겟 고객"
-  }
+  "position": 2
 }

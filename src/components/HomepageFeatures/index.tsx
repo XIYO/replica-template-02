@@ -15,16 +15,16 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        닌텐도 스위치 2 소개, 시장 영향, 타겟 고객
+        AI 에이전트의 정의, 발전 역사, 현재 기술 수준을 알아봅니다.
       </>
     ),
   },
   {
-    title: '주요 기능',
+    title: '핵심 기술',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        하드웨어 사양, 소프트웨어 및 게임, 사용자 경험
+        LLM 기반 에이전트, 멀티모달 에이전트, 자율 에이전트 아키텍처를 분석합니다.
       </>
     ),
   },

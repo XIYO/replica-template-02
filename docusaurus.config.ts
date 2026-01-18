@@ -94,17 +94,17 @@ const config: Config = {
         {
           title: '개요',
           items: [
-            { label: '소개', to: '/docs/overview/introduction' },
-            { label: '시장 영향', to: '/docs/overview/market-impact' },
-            { label: '타겟 고객', to: '/docs/overview/target-audience' },
+            { label: 'AI 에이전트란?', to: '/docs/overview/what-is-ai-agent' },
+            { label: '발전 역사', to: '/docs/overview/evolution-history' },
+            { label: '현재 기술 수준', to: '/docs/overview/current-state' },
           ],
         },
         {
-          title: '주요 기능',
+          title: '핵심 기술',
           items: [
-            { label: '하드웨어 사양', to: '/docs/features/hardware-specs' },
-            { label: '소프트웨어 및 게임', to: '/docs/features/software-and-games' },
-            { label: '사용자 경험', to: '/docs/features/user-experience' },
+            { label: 'LLM 기반 에이전트', to: '/docs/core-technologies/llm-based-agent' },
+            { label: '멀티모달 에이전트', to: '/docs/core-technologies/multimodal-agent' },
+            { label: '자율 에이전트', to: '/docs/core-technologies/autonomous-agent' },
           ],
         },
         {
